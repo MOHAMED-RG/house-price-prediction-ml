@@ -155,4 +155,28 @@ https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/
 
 ---
 
+## Key Insights
+
+- Median income was the most important feature affecting house prices.
+- Houses near the ocean tend to have higher prices.
+- Feature engineering significantly improved model performance.
+- Random Forest performed much better than Linear Regression.
+- GridSearchCV provided a structured optimization process, resulting in stable and consistent performance (~0.81 R²).
+
+---
+
+## Future Improvements
+
+- Improve model performance using advanced algorithms such as XGBoost or LightGBM.
+- Apply more advanced feature selection techniques.
+- Add interactive visualizations to the Streamlit application.
+- Deploy the project on cloud platforms for better scalability and accessibility.
+- Experiment with ensemble learning methods to further reduce prediction error.
+
+---
+
+## Author
+
+**Mohamed Atia**  
+Aspiring Data Scientist
 
