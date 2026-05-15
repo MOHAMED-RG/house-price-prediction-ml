@@ -104,7 +104,7 @@ GridSearchCV was used to optimize the Random Forest model.
 |------|---------|
 | Linear Regression | 0.63 |
 | Random Forest (Baseline) | 0.81 |
-| GridSearchCV (Tuned) | 0.81 |
+| GridSearchCV (Final Model) | 0.81 |
 
 Both models achieved similar performance (~0.81 R²).
 
@@ -166,8 +166,6 @@ House-Price-Prediction/
 ├── requirements.txt
 ├── README.md
 ├── house-price-project.ipynb
-
-# Key Insights, Future Improvements & Author
 
 ## Key Insights
 
