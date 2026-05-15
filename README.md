@@ -155,17 +155,4 @@ https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/
 
 ---
 
-# Project Structure
-
-```
-text
-House-Price-Prediction/
-│
-├── app.py
-├── housing.csv
-├── house_price_model.pkl
-├── requirements.txt
-├── README.md
-├── house-price-project.ipynb
-
 
