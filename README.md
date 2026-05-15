@@ -15,7 +15,8 @@ This project predicts California house prices using Machine Learning techniques.
 
 ---
 
-# Dataset
+## Dataset
+[Housing Prices Dataset](https://www.kaggle.com/datasets/yasserh/housing-prices-dataset)
 
 The project uses the California Housing Dataset.
 
