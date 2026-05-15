@@ -4,15 +4,14 @@
 
 This project predicts California house prices using Machine Learning techniques.
 
-The project workflow includes:
-
-* Data Cleaning
-* Exploratory Data Analysis (EDA)
-* Feature Engineering
-* Data Preprocessing
-* Model Building
-* Hyperparameter Tuning
-* Streamlit Deployment
+### Workflow
+- Data Cleaning
+- Exploratory Data Analysis (EDA)
+- Feature Engineering
+- Data Preprocessing
+- Model Building
+- Hyperparameter Tuning
+- Streamlit Deployment
 
 ---
 
@@ -20,42 +19,36 @@ The project workflow includes:
 
 The project uses the California Housing Dataset.
 
-## Features Include
+### Features
+- Longitude
+- Latitude
+- Housing Median Age
+- Total Rooms
+- Total Bedrooms
+- Population
+- Households
+- Median Income
+- Ocean Proximity
 
-* Longitude
-* Latitude
-* Housing Median Age
-* Total Rooms
-* Total Bedrooms
-* Population
-* Households
-* Median Income
-* Ocean Proximity
-
-## Target Variable
-
-* Median House Value
+### Target Variable
+- Median House Value
 
 ---
 
 # Data Cleaning
 
-The following preprocessing steps were applied:
-
-* Handled missing values using the median
-* Checked duplicate rows
-* Converted categorical variables using One Hot Encoding
+- Handled missing values using the median
+- Checked duplicate rows
+- Applied One-Hot Encoding for categorical variables
 
 ---
 
 # Exploratory Data Analysis (EDA)
 
-During EDA:
-
-* Analyzed the target variable distribution
-* Performed correlation analysis
-* Used heatmaps to explore feature relationships
-* Analyzed ocean proximity distribution
+- Analyzed target variable distribution
+- Performed correlation analysis
+- Used heatmaps to explore feature relationships
+- Analyzed ocean proximity distribution
 
 ---
 
@@ -63,47 +56,47 @@ During EDA:
 
 New features were created to improve model performance:
 
-* room_per_household
-* bedrooms_per_room
-* population_per_house
+- room_per_household
+- bedrooms_per_room
+- population_per_house
 
-These engineered features improved the model’s ability to capture hidden relationships in the dataset.
+These features helped capture hidden relationships in the data.
 
 ---
 
-#Models Used
-1. Linear Regression
+# Models Used
 
-Linear Regression was used as the baseline model.
+## 1. Linear Regression (Baseline)
 
-Results
-MAE: 50670
-R² Score: 0.63
+### Results
+- MAE: 50670  
+- R² Score: 0.63  
 
-2. Random Forest Regressor
+---
 
-Random Forest significantly improved prediction performance.
+## 2. Random Forest Regressor
 
-Results
-R² Score: 0.81
+### Results
+- R² Score: 0.81  
 
-3. Hyperparameter Tuning using GridSearchCV
+---
+
+## 3. Hyperparameter Tuning (GridSearchCV)
 
 GridSearchCV was used to optimize the Random Forest model.
 
-Best Parameters
-n_estimators = 100
-max_depth = 20
-min_samples_split = 2
+### Best Parameters
+- n_estimators: 100  
+- max_depth: 20  
+- min_samples_split: 2  
 
-Final Optimized Model Results
+### Results
+- MAE: 32471  
+- MSE: 2524509266  
+- RMSE: 50244  
+- R² Score: 0.8073  
 
-Metric	Score
-
-MAE	32471
-MSE	2524509266
-RMSE	50244
-R² Score	0.8073
+---
 
 # Model Comparison
 
@@ -111,56 +104,53 @@ R² Score	0.8073
 |------|---------|
 | Linear Regression | 0.63 |
 | Random Forest (Baseline) | 0.81 |
-| GridSearchCV (Final Model) | 0.81 |
+| GridSearchCV (Tuned) | 0.81 |
 
 Both models achieved similar performance (~0.81 R²).
 
+---
 
 # Final Model (Selected)
 
-The final model used for deployment is GridSearchCV Optimized Random Forest.
+The final model used for deployment is **GridSearchCV Optimized Random Forest**.
 
 GridSearchCV was selected because it provides a more structured and systematic approach to hyperparameter tuning, ensuring better reproducibility and model stability.
 
-
-### Performance
-
-* MAE: 32471
-* RMSE: 50154
-* R² Score: 0.81
-
+### Final Performance
+- MAE: 32471  
+- RMSE: 50154  
+- R² Score: 0.81  
 
 ---
 
 # Technologies Used
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* Streamlit
-* Joblib
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Streamlit
+- Joblib
 
 ---
 
 # Streamlit Application
 
-A Streamlit web application was developed for real-time house price prediction.
+A Streamlit web app was developed for real-time house price prediction.
 
-Users can input:
+### Inputs
+- Median Income
+- Location Information
+- Number of Rooms
+- Population
+- Ocean Proximity
 
-* Median Income
-* Location Information
-* Number of Rooms
-* Population Information
-* Ocean Proximity
+### Output
+- Predicted house price instantly
 
-The application predicts the estimated house price instantly.
-
-## Live Demo
-
+🔗 Live Demo:  
 https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/
 
 ---
@@ -176,39 +166,30 @@ House-Price-Prediction/
 ├── requirements.txt
 ├── README.md
 ├── house-price-project.ipynb
-```
+
+# Key Insights, Future Improvements & Author
+
+## Key Insights
+
+- Median income was the most important feature affecting house prices.
+- Houses near the ocean tend to have higher prices.
+- Feature engineering significantly improved model performance.
+- Random Forest performed much better than Linear Regression.
+- GridSearchCV provided a structured optimization process, resulting in stable and consistent performance (~0.81 R²).
 
 ---
 
-# Run The Project
+## Future Improvements
 
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
----
-# Key Insights
-
-* Median income was the most important feature affecting house prices.
-* Houses located near the ocean generally had higher prices.
-* Feature engineering improved model performance compared to the baseline model.
-* Random Forest performed significantly better than Linear Regression.
-* Hyperparameter tuning using GridSearchCV provided a structured optimization process and was selected as the final model despite similar performance to the baseline Random Forest.
----
-
-# Future Improvements
-
-* Improve model performance using more advanced models such as XGBoost or LightGBM.
-* Perform deeper feature engineering and feature selection.
-* Add more interactive visualizations to the Streamlit application.
-* Deploy the application using cloud services for better scalability.
-* Experiment with ensemble learning techniques to reduce prediction error.
+- Improve model performance using advanced algorithms such as XGBoost or LightGBM.
+- Apply more advanced feature selection techniques.
+- Add interactive visualizations to the Streamlit application.
+- Deploy the project on cloud platforms for better scalability and accessibility.
+- Experiment with ensemble learning methods to further reduce prediction error.
 
 ---
 
-# Author
+## Author
 
-Mohamed Atia
-
+**Mohamed Atia**  
 Aspiring Data Scientist
