@@ -89,14 +89,16 @@ Linear Regression was used as the baseline model.
 Random Forest significantly improved prediction performance.
 
 ### Results
-
+* MAE: 32294
 * R² Score: 0.81
 
 ---
 
-## 3. Hyperparameter Tuning using GridSearchCV
+## 3. Hyperparameter Tuning (GridSearchCV - Experimental)
 
-GridSearchCV was used to optimize the Random Forest model.
+GridSearchCV was used during development to explore different hyperparameters for the Random Forest model.
+
+However, it did not lead to a significant improvement over the baseline Random Forest model. Therefore, it was used only for experimentation.
 
 ## Best Parameters
 
@@ -104,17 +106,33 @@ GridSearchCV was used to optimize the Random Forest model.
 * max_depth = 20
 * min_samples_split = 2
 
+### Results
+* MAE: 32471
+* R² Score: 0.81
 ---
 
-# Final Optimized Model Results
+## Model Comparison
 
-| Metric   | Score      |
-| -------- | ---------- |
-| MAE      | 32471      |
-| MSE      | 2524509266 |
-| RMSE     | 50244      |
-| R² Score | 0.8073     |
+| Model | R² Score |
+|------|---------|
+| Linear Regression | 0.63 |
+| Random Forest (Baseline) | 0.81 |
+| GridSearchCV (Tuned) | 0.81 |
 
+
+## Final Model (Selected)
+
+The final model used for deployment is Random Forest Regressor.
+
+Both models achieved similar performance (~0.81 R²), therefore the simpler model was selected.
+
+### Performance
+
+* MAE: 32294
+* RMSE: 50154
+* R² Score: 0.81
+
+The Random Forest model slightly outperformed the GridSearchCV tuned model, but the difference was negligible. Therefore, the simpler model was selected for deployment.
 ---
 
 # Technologies Used
@@ -179,7 +197,7 @@ streamlit run app.py
 * Houses located near the ocean generally had higher prices.
 * Feature engineering improved model performance compared to the baseline model.
 * Random Forest performed significantly better than Linear Regression.
-* Hyperparameter tuning using GridSearchCV slightly improved the final model performance.
+* Hyperparameter tuning using GridSearchCV did not significantly improve performance compared to the baseline Random Forest model, so the simpler model was selected for deployment.
 
 ---
 
