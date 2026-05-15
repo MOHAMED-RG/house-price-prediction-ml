@@ -154,6 +154,16 @@ A Streamlit web app was developed for real-time house price prediction.
 https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/
 
 ---
+### Project Structure
+House-Price-Prediction/
+│
+├── app.py
+├── housing.csv
+├── house_price_model.pkl
+├── requirements.txt
+├── README.md
+├── house-price-project.ipynb
+
 
 ## Key Insights
 
