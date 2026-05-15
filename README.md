@@ -71,68 +71,65 @@ These engineered features improved the model’s ability to capture hidden relat
 
 ---
 
-# Models Used
-
-## 1. Linear Regression
+#Models Used
+1. Linear Regression
 
 Linear Regression was used as the baseline model.
 
-### Results
+Results
+MAE: 50670
+R² Score: 0.63
 
-* MAE: 50670
-* R² Score: 0.63
-
----
-
-## 2. Random Forest Regressor
+2. Random Forest Regressor
 
 Random Forest significantly improved prediction performance.
 
-### Results
-* MAE: 32294
-* R² Score: 0.81
+Results
+R² Score: 0.81
 
----
+3. Hyperparameter Tuning using GridSearchCV
 
-## 3. Hyperparameter Tuning (GridSearchCV - Experimental)
+GridSearchCV was used to optimize the Random Forest model.
 
-GridSearchCV was used during development to explore different hyperparameters for the Random Forest model.
+Best Parameters
+n_estimators = 100
+max_depth = 20
+min_samples_split = 2
 
-However, it did not lead to a significant improvement over the baseline Random Forest model. Therefore, it was used only for experimentation.
+Final Optimized Model Results
 
-## Best Parameters
+Metric	Score
 
-* n_estimators = 100
-* max_depth = 20
-* min_samples_split = 2
+MAE	32471
+MSE	2524509266
+RMSE	50244
+R² Score	0.8073
 
-### Results
-* MAE: 32471
-* R² Score: 0.81
----
-
-## Model Comparison
+# Model Comparison
 
 | Model | R² Score |
 |------|---------|
 | Linear Regression | 0.63 |
 | Random Forest (Baseline) | 0.81 |
-| GridSearchCV (Tuned) | 0.81 |
+| GridSearchCV (Final Model) | 0.81 |
+
+Both models achieved similar performance (~0.81 R²).
 
 
-## Final Model (Selected)
+# Final Model (Selected)
 
-The final model used for deployment is Random Forest Regressor.
+The final model used for deployment is GridSearchCV Optimized Random Forest.
 
-Both models achieved similar performance (~0.81 R²), therefore the simpler model was selected.
+GridSearchCV was selected because it provides a more structured and systematic approach to hyperparameter tuning, ensuring better reproducibility and model stability.
+
 
 ### Performance
 
-* MAE: 32294
+* MAE: 32471
 * RMSE: 50154
 * R² Score: 0.81
 
-The Random Forest model slightly outperformed the GridSearchCV tuned model, but the difference was negligible. Therefore, the simpler model was selected for deployment.
+
 ---
 
 # Technologies Used
@@ -197,8 +194,7 @@ streamlit run app.py
 * Houses located near the ocean generally had higher prices.
 * Feature engineering improved model performance compared to the baseline model.
 * Random Forest performed significantly better than Linear Regression.
-* Hyperparameter tuning using GridSearchCV did not significantly improve performance compared to the baseline Random Forest model, so the simpler model was selected for deployment.
-
+* Hyperparameter tuning using GridSearchCV provided a structured optimization process and was selected as the final model despite similar performance to the baseline Random Forest.
 ---
 
 # Future Improvements
