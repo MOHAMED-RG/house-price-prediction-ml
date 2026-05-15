@@ -157,7 +157,8 @@ https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/
 
 # Project Structure
 
-```text
+```
+text
 House-Price-Prediction/
 │
 ├── app.py
