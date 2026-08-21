@@ -6,7 +6,7 @@ This project predicts California house prices using Machine Learning techniques.
 
 ### Workflow
 - Data Cleaning
-- Exploratory Data Analysis (EDA)
+- Exploratory Data Analysis (EDA) 
 - Feature Engineering
 - Data Preprocessing
 - Model Building
