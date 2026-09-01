@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project predicts California house prices using Machine Learning techniques.         
+This project predicts California house prices using Machine Learning techniques.        
 
 ### Workflow
 - Data Cleaning
