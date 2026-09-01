@@ -23,7 +23,7 @@ The project uses the California Housing Dataset.
 ### Features
 - Longitude
 - Latitude
-- Housing Median Age
+- Housing Median Age 
 - Total Rooms
 - Total Bedrooms
 - Population
