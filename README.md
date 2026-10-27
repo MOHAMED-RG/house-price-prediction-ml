@@ -37,6 +37,7 @@ Predicting house prices is a valuable application of data science in the real es
 - **Dataset:** California Housing Prices
 - **Source:** [Kaggle — California Housing Prices](https://www.kaggle.com/datasets/shibumohapatra/house-price)
 - **Number of Records:** 20,640
+- **Local File:** `housing.csv`
 - **Target Variable:** `median_house_value`
 
 The dataset contains information about California housing districts, including geographic location, household income, population, and housing characteristics.
@@ -211,6 +212,7 @@ house-price-prediction-ml/
 ├── house-price-distribution.png
 ├── correlation-heatmap.png
 ├── house-price-project.ipynb
+├── housing.csv
 ├── app.py
 ├── house_price_model.pkl
 ├── requirements.txt
