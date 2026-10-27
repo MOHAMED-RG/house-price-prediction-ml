@@ -1,184 +1,185 @@
-# House Price Prediction Project
+# 🏠 California House Price Prediction
 
-## Project Overview
+## 📌 Project Overview
 
-This project predicts California house prices using Machine Learning techniques.        
+This project predicts median house values in California using machine learning. It covers the complete machine learning workflow, from data cleaning and exploratory data analysis (EDA) to feature engineering, model training, hyperparameter tuning, and deployment using Streamlit.
 
-### Workflow
-- Data Cleaning
-- Exploratory Data Analysis (EDA) 
-- Feature Engineering
-- Data Preprocessing
-- Model Building
-- Hyperparameter Tuning
-- Streamlit Deployment
+The goal is to build a model that estimates house values based on housing characteristics and location-related features.
 
----
+## 🎯 Project Objectives
 
-## Dataset
-[Housing Prices Dataset](https://www.kaggle.com/datasets/yasserh/housing-prices-dataset)
+- Explore and understand the California Housing dataset.
+- Clean and preprocess the data.
+- Perform exploratory data analysis (EDA).
+- Create new features to improve model performance.
+- Train and evaluate machine learning models.
+- Optimize a Random Forest model using GridSearchCV.
+- Deploy the trained model using Streamlit.
 
-The project uses the California Housing Dataset.
+## 📊 Dataset
+
+The dataset contains **20,640 records** and housing-related features.
+
+**Dataset:** [California Housing Prices Dataset on Kaggle](https://www.kaggle.com/datasets/yasserh/housing-prices-dataset)
 
 ### Features
-- Longitude
-- Latitude
-- Housing Median Age 
-- Total Rooms
-- Total Bedrooms
-- Population
-- Households
-- Median Income
-- Ocean Proximity
 
-### Target Variable
-- Median House Value
+- `longitude`: Geographic longitude.
+- `latitude`: Geographic latitude.
+- `housing_median_age`: Median age of houses in the area.
+- `total_rooms`: Total number of rooms.
+- `total_bedrooms`: Total number of bedrooms.
+- `population`: Population of the area.
+- `households`: Number of households.
+- `median_income`: Median income in the area.
+- `ocean_proximity`: Proximity to the ocean.
+
+**Target variable:** `median_house_value`
+
+## 🧹 Data Cleaning and Preprocessing
+
+The data preparation process included:
+
+- Checking for missing values.
+- Handling missing values in `total_bedrooms`.
+- Inspecting data types and duplicate records.
+- Preparing numerical and categorical features for modeling.
+- Encoding categorical data where required.
+
+## 🔍 Exploratory Data Analysis (EDA)
+
+EDA was used to understand the distribution of house prices and the relationships between numerical features.
+
+### 1. House Price Distribution
+
+![House Price Distribution](images/house-price-distribution.png)
+
+The distribution shows that house values are not perfectly symmetrical. The visible concentration near the upper price limit reflects the dataset's capped house values.
+
+### 2. Correlation Heatmap
+
+![Correlation Heatmap](images/correlation-heatmap.png)
+
+Key observations:
+
+- `median_income` has a positive correlation of approximately **0.69** with `median_house_value`.
+- `longitude` and `latitude` have a strong negative correlation of approximately **-0.92** with each other.
+- `total_rooms`, `total_bedrooms`, `population`, and `households` have strong positive correlations with one another.
+
+Correlation indicates association, not causation.
+
+## ⚙️ Feature Engineering
+
+Three additional features were created to represent housing characteristics more meaningfully:
+
+- `room_per_household`: Average number of rooms per household.
+- `bedrooms_per_room`: Proportion of bedrooms relative to total rooms.
+- `population_per_house`: Average population per household.
+
+These features were introduced to help the model capture additional patterns in the data.
+
+## 🤖 Model Training and Evaluation
+
+Two regression models were trained and evaluated.
+
+### Models
+
+**1. Linear Regression**
+
+Used as a baseline model to establish an initial performance benchmark.
+
+**2. Random Forest Regressor**
+
+Used to capture more complex relationships between housing features and house values.
+
+GridSearchCV was used to tune the Random Forest hyperparameters.
+
+### Model Performance
+
+| Model | MAE | R² Score |
+|---|---:|---:|
+| Linear Regression | 50,670 | 0.63 |
+| Tuned Random Forest | 32,471 | 0.8073 |
+
+The tuned Random Forest model achieved a lower Mean Absolute Error (MAE) and a higher R² score than Linear Regression.
+
+### Best Hyperparameters
+
+The best parameters found through GridSearchCV were:
+
+- `n_estimators`: 100
+- `max_depth`: 20
+- `min_samples_split`: 2
+
+### Final Model Metrics
+
+| Metric | Value |
+|---|---:|
+| Mean Absolute Error (MAE) | 32,471 |
+| Mean Squared Error (MSE) | 2,524,509,266 |
+| Root Mean Squared Error (RMSE) | Approximately 50,244 |
+| R² Score | 0.8073 |
+
+The final model explains approximately **80.73% of the variance** in the target variable on the evaluated dataset.
+
+## 🚀 Streamlit Deployment
+
+The trained model is deployed as an interactive web application where users can enter housing characteristics and receive a predicted house value.
+
+**[Open the Live Application](https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/)**
+
+## 🛠️ Technologies Used
+
+- **Programming:** Python
+- **Data Analysis:** Pandas, NumPy
+- **Visualization:** Matplotlib, Seaborn
+- **Machine Learning:** Scikit-learn
+- **Hyperparameter Tuning:** GridSearchCV
+- **Model Serialization:** Joblib
+- **Web Application:** Streamlit
+- **Development:** Jupyter Notebook, Git, GitHub
+
+## 📁 Project Structure
+
+```text
+house-price-prediction-ml/
+│
+├── images/
+│   ├── house-price-distribution.png
+│   └── correlation-heatmap.png
+│
+├── house_price_prediction.ipynb
+├── app.py
+├── model.pkl
+├── requirements.txt
+└── README.md
+```
+
+- `images/`: Contains the visualizations displayed in this README.
+- `house_price_prediction.ipynb`: Contains data cleaning, EDA, feature engineering, model training, and evaluation.
+- `app.py`: Contains the Streamlit application.
+- `model.pkl`: Stores the trained model.
+- `requirements.txt`: Lists the required Python packages.
+- `README.md`: Documents the project and its results.
+
+*Note: Make sure the filenames above match the actual files in your repository.*
+
+## 💡 Key Takeaways
+
+- Data exploration helps identify patterns and relationships in housing data.
+- Feature engineering can provide more informative inputs for machine learning models.
+- Hyperparameter tuning can improve model performance.
+- Comparing a baseline model with a more advanced model helps evaluate the value of additional complexity.
+- Streamlit makes it possible to turn a trained model into an interactive application.
+
+## 🔮 Future Improvements
+
+- Experiment with additional regression algorithms.
+- Apply cross-validation for more robust model evaluation.
+- Improve feature selection and engineering.
+- Compare model performance using additional evaluation metrics.
+- Explore alternative deployment options.
 
 ---
 
-# Data Cleaning
-
-- Handled missing values using the median
-- Checked duplicate rows
-- Applied One-Hot Encoding for categorical variables
-
----
-
-# Exploratory Data Analysis (EDA)
-
-- Analyzed target variable distribution
-- Performed correlation analysis
-- Used heatmaps to explore feature relationships
-- Analyzed ocean proximity distribution
-
----
-
-# Feature Engineering
-
-New features were created to improve model performance:
-
-- room_per_household
-- bedrooms_per_room
-- population_per_house
-
-These features helped capture hidden relationships in the data.
-
----
-
-# Models Used
-
-## 1. Linear Regression (Baseline)
-
-### Results
-- MAE: 50670  
-- R² Score: 0.63  
-
----
-
-## 2. Random Forest Regressor
-
-### Results
-- R² Score: 0.81  
-
----
-
-## 3. Hyperparameter Tuning (GridSearchCV)
-
-GridSearchCV was used to optimize the Random Forest model.
-
-### Best Parameters
-- n_estimators: 100  
-- max_depth: 20  
-- min_samples_split: 2  
-
-### Results
-- MAE: 32471  
-- MSE: 2524509266  
-- RMSE: 50244  
-- R² Score: 0.8073  
-
----
-
-# Model Comparison
-
-| Model | R² Score |
-|------|---------|
-| Linear Regression | 0.63 |
-| Random Forest (Baseline) | 0.81 |
-| GridSearchCV (Final Model) | 0.81 |
-
-Both models achieved similar performance (~0.81 R²).
-
----
-
-# Final Model (Selected)
-
-The final model used for deployment is **GridSearchCV Optimized Random Forest**.
-
-GridSearchCV was selected because it provides a more structured and systematic approach to hyperparameter tuning, ensuring better reproducibility and model stability.
-
-### Final Performance
-- MAE: 32471  
-- RMSE: 50154  
-- R² Score: 0.81  
-
----
-
-# Technologies Used
-
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Streamlit
-- Joblib
-
----
-
-# Streamlit Application
-
-A Streamlit web app was developed for real-time house price prediction.
-
-### Inputs
-- Median Income
-- Location Information
-- Number of Rooms
-- Population
-- Ocean Proximity
-
-### Output
-- Predicted house price instantly
-
-🔗 Live Demo:  
-https://house-price-prediction-ml-rcfsthuqqhowawk87jlhma.streamlit.app/
-
----
-
-
-## Key Insights
-
-- Median income was the most important feature affecting house prices.
-- Houses near the ocean tend to have higher prices.
-- Feature engineering significantly improved model performance.
-- Random Forest performed much better than Linear Regression.
-- GridSearchCV provided a structured optimization process, resulting in stable and consistent performance (~0.81 R²).
-
----
-
-## Future Improvements
-
-- Improve model performance using advanced algorithms such as XGBoost or LightGBM.
-- Apply more advanced feature selection techniques.
-- Add interactive visualizations to the Streamlit application.
-- Deploy the project on cloud platforms for better scalability and accessibility.
-- Experiment with ensemble learning methods to further reduce prediction error.
-
----
-
-## Author
-
-**Mohamed Atia**  
-Aspiring Data Scientist
 
