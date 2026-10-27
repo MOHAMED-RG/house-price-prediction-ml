@@ -52,13 +52,13 @@ EDA was used to understand the distribution of house prices and the relationship
 
 ### 1. House Price Distribution
 
-![House Price Distribution](images/house-price-distribution.png)
+![House Price Distribution](house-price-distribution.png)
 
 The distribution shows that house values are not perfectly symmetrical. The visible concentration near the upper price limit reflects the dataset's capped house values.
 
 ### 2. Correlation Heatmap
 
-![Correlation Heatmap](images/correlation-heatmap.png)
+![Correlation Heatmap](correlation-heatmap.png)
 
 Key observations:
 
